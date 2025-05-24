@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ProductListView: View {
+    @EnvironmentObject private var router: Router
+    let categoryId: Int
+    
     var body: some View {
-        Text("Add Product List here")
+        List(1...5, id: \.self) { productId in
+            Button("Product \(productId)") {
+                router.navigate(to: .productDetail(productId: productId))
+            }
+        }
     }
 }
 
-#Preview {
-    ProductListView()
-}
+//#Preview {
+//    ProductListView()
+//}

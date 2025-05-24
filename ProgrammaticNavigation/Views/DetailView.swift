@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct DetailView: View {
+    @EnvironmentObject private var router: Router
+    let id: Int
+    
     var body: some View {
-        Text("Add some details here")
+        VStack {
+            Text("Detail Page\(id)")
+            
+            Button("Go To Settings") {
+                router.navigate(to: .settings)
+            }
+            
+            Button("Return to Home") {
+                router.navigateToRoot()
+            }
+            
+            Button("Go Back") {
+                router.navigateBack()
+            }
+        }
+        .navigationTitle("Detail")
     }
 }
 
-#Preview {
-    DetailView()
-}
+//#Preview {
+//    DetailView()
+//}

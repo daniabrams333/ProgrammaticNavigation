@@ -18,5 +18,4 @@ enum Route: Hashable {
     case categories(categoryId: Int)
     case productList(categoryId: Int)
     case productDetail(productId: Int)
-    
 }
